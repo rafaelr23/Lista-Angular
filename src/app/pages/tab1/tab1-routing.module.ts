@@ -3,9 +3,15 @@ import { RouterModule, Routes } from '@angular/router';
 import { Tab1Page } from './tab1.page';
 
 const routes: Routes = [
+  //Ruta Padre
   {
     path: '',
     component: Tab1Page,
+  },
+  //Rutas Hijas
+  {
+    path: 'agregar/:listaId',
+    loadChildren: () => import('../agregar/agregar.module').then( m => m.AgregarPageModule)
   }
 ];
 
